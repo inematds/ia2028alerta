@@ -1,5 +1,7 @@
 # Alerta IA 2028
 
+**🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
+
 Curso + explainer sobre auto-aperfeicoamento recursivo (RSI) da IA com horizonte 2028 — destilado do video-fonte, no formato INEMA.CLUB. Self-contained (abre direto no navegador).
 
 - `index.html` — landing do curso (3 trilhas, 6 modulos)

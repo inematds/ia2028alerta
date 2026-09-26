@@ -1108,6 +1108,8 @@ html[data-reduced-motion="reduce"] *::after {
 /* popover de aparência */
 .inema-appearance-pop {
   position: absolute;
+  inset-inline-end: 0;
+  visibility: hidden;
   z-index: 85;
   inline-size: min(20rem, calc(100vw - 1.5rem));
   margin-block-start: 0.4rem;
@@ -1126,6 +1128,7 @@ html[data-reduced-motion="reduce"] *::after {
               transform var(--inema-dur) var(--inema-ease);
 }
 .inema-appearance-pop[data-open="true"] {
+  visibility: visible;
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
@@ -1143,6 +1146,7 @@ html[data-reduced-motion="reduce"] *::after {
 /* segmented control (tema / fonte / tamanho / entrelinha / medida) */
 .inema-segment {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.25rem;
   padding: 0.2rem;
   background: var(--surface-2);
@@ -1296,3 +1300,19 @@ html[data-reduced-motion="reduce"] *::after {
    Layer 1 = .dark (Tailwind). Layer 2 = data-theme (sepia/foco/contraste).
    Acento por trilha = data-accent. Prefs de leitura = .inema-prose + data-* no html.
    ============================================================================= */
+
+/* Em telas estreitas, a navegação dos cursos usa uma segunda linha para os controles. */
+@media (max-width: 639px) {
+  nav.sticky > div > .h-14 {
+    height: auto;
+    min-height: 3.5rem;
+    flex-wrap: wrap;
+    row-gap: .4rem;
+    padding-block: .5rem;
+  }
+  nav.sticky > div > .h-14 > div:last-child {
+    margin-left: auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}

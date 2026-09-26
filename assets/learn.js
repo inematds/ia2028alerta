@@ -1866,7 +1866,7 @@
     var def = S.checks[id];
     var checks = getChecks();
     var correct = false;
-    if (def) correct = (choice === def.answer);
+    if (def) correct = (String(choice) === String(def.answer));
     checks[id] = { choice: choice, correct: correct, ts: Date.now() };
     setChecks(checks);
     // feedback explicativo por opcao — NUNCA bloqueia avanco
